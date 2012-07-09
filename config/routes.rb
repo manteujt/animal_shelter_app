@@ -1,10 +1,17 @@
 AnimalShelterApp::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/help"
-  get "static_pages/about"
-  get "static_pages/dog"
-  get "static_pages/cat"
-  get "static_pages/adopt"
+  get "animals/new"
+  
+  root :to => "static_pages#home"
+  
+  match '/new_animal', :to => "animals#new"
+  
+  match '/help', :to => "static_pages#help"
+  match '/about', :to => "static_pages#about"
+  match '/dog', :to => "static_pages#dog"
+  match '/cat', :to => "static_pages#cat"
+  match '/adopt', :to => "static_pages#adopt"
+  match '/employee', :to => "static_pages#employee"
+  match '/contact', :to => "static_pages#contact"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -16,4 +16,10 @@ class StaticPagesController < ApplicationController
 
   def adopt
   end
+  
+  def employee
+  end
+  
+  def contact
+  end
 end
