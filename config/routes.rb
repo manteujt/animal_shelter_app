@@ -1,9 +1,12 @@
 AnimalShelterApp::Application.routes.draw do
+  get "users/new"
   get "animals/new"
   
   root :to => "static_pages#home"
   
   match '/new_animal', :to => "animals#new"
+  
+  match '/new_user', :to=> "users#new"
   
   match '/help', :to => "static_pages#help"
   match '/about', :to => "static_pages#about"
