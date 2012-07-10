@@ -15,6 +15,8 @@ AnimalShelterApp::Application.routes.draw do
   match '/adopt', :to => "static_pages#adopt"
   match '/employee', :to => "static_pages#employee"
   match '/contact', :to => "static_pages#contact"
+  match '/add_employee', :to => "static_pages#add_employee"
+  match '/change_password', :to => "static_pages#change_password"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

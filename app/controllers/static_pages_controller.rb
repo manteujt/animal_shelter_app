@@ -22,4 +22,10 @@ class StaticPagesController < ApplicationController
   
   def contact
   end
+  
+  def add_employee
+  end
+  
+  def change_password
+  end
 end
