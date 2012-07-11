@@ -1,22 +1,16 @@
 AnimalShelterApp::Application.routes.draw do
-  get "users/new"
-  get "animals/new"
+  resources :animals 
+  resources :users
+  resources :sessions, :only => [:new, :create]
   
   root :to => "static_pages#home"
-  
-  match '/new_animal', :to => "animals#new"
-  
+
+  match "logout", :to => 'sessions#destroy'
   match '/new_user', :to=> "users#new"
-  
   match '/help', :to => "static_pages#help"
   match '/about', :to => "static_pages#about"
-  match '/dog', :to => "static_pages#dog"
-  match '/cat', :to => "static_pages#cat"
-  match '/adopt', :to => "static_pages#adopt"
-  match '/employee', :to => "static_pages#employee"
+  match '/adopt', :to => "static_pages#adopt" 
   match '/contact', :to => "static_pages#contact"
-  match '/add_employee', :to => "static_pages#add_employee"
-  match '/change_password', :to => "static_pages#change_password"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

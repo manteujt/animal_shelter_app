@@ -1,3 +1,18 @@
-<% provide(:title, 'Add new user') %>
-<h1>Add New User</h1>
-<p>This page will be for administrators to add new employees to the system.</p>
+<% provide(:title, 'Add new employee') %>
+<h1>Add New Employee</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user) do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+
+      <%= f.submit "Create account", :class => "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
+

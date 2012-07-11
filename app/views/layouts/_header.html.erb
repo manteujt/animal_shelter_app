@@ -4,11 +4,19 @@
       <%= link_to "animal shelter app", '#', :id => "logo" %>
       <nav>
         <ul class="nav pull-right">
-					<li><%= link_to "New Animal", new_animal_path %></li>
+					<% if signed_in? %>
           <li><%= link_to "Home",    root_path %></li>
           <li><%= link_to "Help",    help_path %></li>
-          <li><%= link_to "Dogs", dog_path %></li>
-					<li><%= link_to "Cats", cat_path %></li>
+          <li><%= link_to "Dogs", animals_path(:display => "dog") %></li>
+					<li><%= link_to "Cats", animals_path(:display => "cat") %></li>
+					<li><%= link_to "New Animal", new_animal_path %></li>
+					<li><%= link_to "Sign Out", logout_path, :method => "delete" %></li>
+					<% else %>
+					<li><%= link_to "Home",    root_path %></li>
+          <li><%= link_to "Help",    help_path %></li>
+          <li><%= link_to "Dogs", animals_path(:display => "dog") %></li>
+					<li><%= link_to "Cats", animals_path(:display => "cat") %></li>
+					<% end %>
         </ul>
       </nav>
     </div>

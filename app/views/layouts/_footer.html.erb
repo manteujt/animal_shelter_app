@@ -1,10 +1,15 @@
 <footer class="footer">
   <nav>
     <ul>
-			<li><%= link_to "Employee", employee_path %>
-      <li><%= link_to "About",   about_path %></li>
-      <li><%= link_to "Contact", contact_path %></li>
-      <li><%= link_to "Help", help_path %></li>
+		<% if signed_in? %>
+			<li><%= link_to "Change Password", edit_user_path(current_user) %><li>
+			<li><%= link_to "Add Employee", new_user_path %><li>
+		<% else %>
+			<li><%= link_to "Employee", new_session_path %><li>
+		<% end %>
+			<li><%= link_to "About",   about_path %></li>
+    	<li><%= link_to "Contact", contact_path %></li>
+    	<li><%= link_to "Help", help_path %></li>
     </ul>
   </nav>
 </footer>
